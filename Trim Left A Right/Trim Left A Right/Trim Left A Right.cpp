@@ -9,27 +9,38 @@ string ReadString()
     getline(cin, S1);
     return S1;
 }
-string TrimLeft(string  S1 , string Delimr)
+string TrimLeft(string S1)
 {
-    short Pos = 0;
-    string Sword;
-    while ((Pos = S1.find(Delimr)) != std::string::npos)
+    for (short i = 0; i < S1.length(); i++)
     {
-        Sword = S1.substr(0, Pos);
-        if (Sword != "")
+        if (S1[i] != ' ')
         {
-
-        }
-        S1.erase(0, Pos + Delimr.length());
+            return    S1. substr(  i ,( S1.length()  - i  )) ;
+        }              
     }
-    if (S1!="")
+   
+    return "";
+}
+string TrimRight(string S1)
+{
+    for (int  i = S1.length(); i > 0; i--)
     {
-
+        if (S1[i]!=' ')
+        {
+            return S1.substr(S1.length() - i,i);
+        }
     }
-    return S1;
+    return"";
+}
+void Print(string S1)
+{
+    cout << TrimLeft(S1)  ;
+    cout << TrimRight(S1)  ;
     
 }
 int main()
 {
-    std::cout << "Hello World!\n";
+    string Namee = "     Ali Mohamed Ahmed     ";
+
+    Print(Namee);
 }
