@@ -32,15 +32,21 @@ string TrimRight(string S1)
     }
     return"";
 }
-void Print(string S1)
+string Print(string S1 )
 {
-    cout << TrimLeft(S1)  ;
-    cout << TrimRight(S1)  ;
-    
+     
+    return TrimLeft(TrimRight(S1));
 }
 int main()
 {
-    string Namee = "     Ali Mohamed Ahmed     ";
+    string Namee = "     Ali Mohamed Ahmed            AS             ";
 
-    Print(Namee);
+
+    cout << "String              =  " << Namee << endl;
+
+    cout << "String trim  Left   =  " << TrimLeft(Namee) << endl;
+
+    cout << "String trim  Right  =  " << TrimRight(Namee) << endl;
+
+    cout << "String trim         =  " <<  Print(Namee );
 }
